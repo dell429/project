@@ -1,0 +1,19 @@
+{
+  "name": "backtobackhbar",
+  "version": "1.0.0",
+  "description": "CST8234 back to back Horizontal Bar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dong Chen",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.9.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "jasmine": "^3.6.2",
+    "jsdoc": "^3.6.6"
+  }
+}

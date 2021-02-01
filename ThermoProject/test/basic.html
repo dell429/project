@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Linear Thermometer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.js"></script>
+    <script src="../dist/thermometers.demo.js"></script>
+		<link rel="stylesheet" href="style.css">
+    <!-- <script src="../dist/controller.demo.js"></script> -->
+
+</head>
+
+<body>
+    <div class="row">
+      <div class="card-header">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="backtomenu">
+
+        <button onclick="window.location='firstpage.html'" type="button" class="btn btn-primary">Back To Main Menu</button>
+
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <span> Select a value:  </span>
+        <select id="combo">
+          <option>50</option>
+          <option selected="selected">100</option>
+          <option>150</option>
+          <option>200</option>
+          <option>250</option>
+          <option>300</option>
+        </select>
+      <input type="button" name="botton" class="btn btn-primary" value="Submit" onclick="displayChart();">
+
+      </div>
+    </div>
+     <div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" >
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="canvas-holder">
+          <canvas id="chart-area" width="500" height="500" ></canvas>
+      </div>
+     </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        var initialValue = 100;
+
+        var ctx = document.getElementById("chart-area").getContext("2d");
+        //initialize
+        draw();
+
+        function displayChart() {
+            var element = document.getElementById("combo");
+            initialValue = element.options[element.selectedIndex].value;
+            draw();
+        }
+
+    function draw() {
+            window.mythemo = new Chart(ctx, {
+                type: 'thermometer',
+                options: {
+                    elements: {
+                        point: {
+                            pointStyle: 'cross',
+                            radius: 10,
+                            hoverRadius: 10,
+                            borderColor: 'red',
+                            backgroundColor:"red",
+                          fillColor: "red"
+                        }
+                    }
+                },
+                data: {
+                    datasets: [{
+                        label: 'Temperature',
+                        data: [initialValue],
+                        borderWidth: 1,
+                        borderColor: 'red',
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: 'red',
+                        backgroundColor: 'red',
+
+                    }]
+                }
+            });
+
+        }   </script>
+
+</body>
+
+</html>

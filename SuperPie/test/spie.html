@@ -1,0 +1,804 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Spie Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.js"></script>
+		<script src="../dist/spie.js"></script>
+	</head>
+	<body>
+		<div id="canvas-holder" style="width:30%">
+			<canvas id="chart-area" width="200" height="200"/>
+		</div>
+
+		<div id="my-spie-legend">
+
+
+	<script>
+	// var polarData = {
+	//     labels: [
+	//         "Red",
+	//         "Green",
+	//         "Yellow",
+	//         "Grey",
+	//         "Dark Grey"
+	//     ],
+	//     datasets: [
+	//         {
+	//             data: [300, 50, 100, 40, 120],
+	//             backgroundColor: [
+	//                 "#F7464A",
+	//                 "#46BFBD",
+	//                 "#FDB45C",
+	//                 "#949FB1",
+	//                 "#4D5360"
+	//             ],
+	//             hoverBackgroundColor: [
+	//                 "#FF5A5E",
+	//                 "#5AD3D1",
+	//                 "#FFC870",
+	//                 "#A8B3C5",
+	//                 "#616774"
+	//             ]
+	//         }]
+	// };
+	var spieData4 = {
+		datasets:[
+			{
+			width: 35,
+			label: "Seg1",
+			slices :
+				[
+					{
+						height: 100,
+						color: "#F7464A",
+						highlight: "#FF5A5E",
+						label: "2"
+					},
+					{
+						height: 100,
+						color: "#CC1015",
+						highlight: "#ED0C11",
+						label: "1"
+					}
+				]
+		 },
+		{
+			width: 20,
+			label: "Seg2",
+			slices :
+			[
+					{
+						height: 400,
+						color: "#4AE85D",
+						highlight: "#55FA68",
+						label: "2"
+					},
+					{
+						height: 50,
+						color: "#20D635",
+						highlight: "#23FA3C",
+						label: "1"
+					}
+				]
+		},
+		{
+			width: 30,
+			label: "Seg3",
+			slices :
+			[
+					{
+						height: 200,
+						color: "#7e685a",
+						highlight: "#55FA68",
+						label: "2"
+					},
+					{
+						height: 100,
+						color: "#afd275",
+						highlight: "#23FA3C",
+						label: "1"
+					}
+				]
+		},
+		{
+			width: 70,
+			label: "Seg4",
+			slices :
+			[
+					{
+						height: 175,
+						color: "#8bbc21",
+						highlight: "#55FA68",
+						label: "2"
+					},
+					{
+						height: 80,
+						color: "#492970",
+						highlight: "#23FA3C",
+						label: "1"
+					}
+				]
+		}
+	]
+	};
+
+		var spieData3 = {
+      datasets:[
+				{
+        width: 35,
+        label: "Seg1",
+        slices :
+          [
+            {
+              height: 100,
+              color: "#F7464A",
+              highlight: "#FF5A5E",
+              label: "2"
+            },
+            {
+              height: 100,
+              color: "#CC1015",
+              highlight: "#ED0C11",
+              label: "1"
+            }
+          ]
+       },
+			{
+				width: 20,
+				label: "Seg2",
+				slices :
+				[
+						{
+							height: 400,
+							color: "#4AE85D",
+							highlight: "#55FA68",
+							label: "2"
+						},
+						{
+							height: 50,
+							color: "#20D635",
+							highlight: "#23FA3C",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 30,
+				label: "Seg3",
+				slices :
+				[
+						{
+							height: 200,
+							color: "#7e685a",
+							highlight: "#55FA68",
+							label: "2"
+						},
+						{
+							height: 100,
+							color: "#afd275",
+							highlight: "#23FA3C",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 70,
+				label: "Seg4",
+				slices :
+				[
+						{
+							height: 175,
+							color: "#8bbc21",
+							highlight: "#55FA68",
+							label: "2"
+						},
+						{
+							height: 80,
+							color: "#492970",
+							highlight: "#23FA3C",
+							label: "1"
+						}
+					]
+			}
+		]
+    };
+
+
+
+
+		var spieData1 = {
+      datasets:[
+				{
+        width: 35,
+        label: "Seg1",
+        slices :
+          [
+            {
+              height: 100,
+              color: "#F7464A",
+              highlight: "#FF5A5E",
+              label: "2"
+            },
+            {
+              height: 100,
+              color: "#CC1015",
+              highlight: "#ED0C11",
+              label: "1"
+            }
+          ]
+       }
+		 ]
+	 };
+
+	 var spieData2 = {
+			datasets:[
+			 {
+				width: 35,
+				label: "Seg1",
+				slices :
+					[
+						{
+							height: 100,
+							color: "#F7464A",
+							highlight: "#FF5A5E",
+							label: "2"
+						},
+						{
+							height: 100,
+							color: "#CC1015",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			 },
+		 {
+			 width: 20,
+			 label: "Seg2",
+			 slices :
+			 [
+					 {
+						 height: 400,
+						 color: "#4AE85D",
+						 highlight: "#55FA68",
+						 label: "2"
+					 },
+					 {
+						 height: 50,
+						 color: "#20D635",
+						 highlight: "#23FA3C",
+						 label: "1"
+					 }
+				 ]
+		 }
+	 ]
+		};
+
+		var spieData43 = {
+			datasets:[
+				{
+				width: 35,
+				label: "Seg1",
+				slices :
+					[
+						{
+							height: 100,
+							color: "#F7464A",
+							highlight: "#FF5A5E",
+							label: "3"
+						},
+						{
+							height: 100,
+							color: "#CC1015",
+							highlight: "#ED0C11",
+							label: "2"
+						},
+						{
+							height: 65,
+							color: "#2f7ed8",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			 },
+			{
+				width: 20,
+				label: "Seg2",
+				slices :
+				[
+						{
+							height: 400,
+							color: "#4AE85D",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 50,
+							color: "#20D635",
+							highlight: "#23FA3C",
+							label: "3"
+						},
+						{
+							height: 180,
+							color: "#0d233a",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 30,
+				label: "Seg3",
+				slices :
+				[
+						{
+							height: 200,
+							color: "#7e685a",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 100,
+							color: "#afd275",
+							highlight: "#23FA3C",
+							label: "2"
+						},
+						{
+							height: 87,
+							color: "#8bbc21",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 70,
+				label: "Seg4",
+				slices :
+				[
+						{
+							height: 175,
+							color: "#8bbc21",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 80,
+							color: "#492970",
+							highlight: "#23FA3C",
+							label: "2"
+						},
+						{
+							height: 135,
+							color: "#a6c96a",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			}
+		]
+		};
+
+
+		var spieData53 = {
+			labels : ["Seg1", "Seg2", "Seg3","Seg4","Seg5",],
+			datasets :[
+				{
+				width: 45,
+				label: "Seg1",
+				color: "#a6c96a",
+				slices :
+					[
+						{
+							height: 225,
+							color: "#a6c96a",
+							highlight: "#FF5A5E",
+							label: "3"
+						},
+						{
+							height: 97,
+							color: "#f28f43",
+							highlight: "#ED0C11",
+							label: "2"
+						},
+						{
+							height: 26,
+							color: "#77a1e5",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			 	},
+				{
+				width: 35,
+				label: "Seg2",
+				slices :
+					[
+						{
+							height: 100,
+							color: "#F7464A",
+							highlight: "#FF5A5E",
+							label: "3"
+						},
+						{
+							height: 100,
+							color: "#CC1015",
+							highlight: "#ED0C11",
+							label: "2"
+						},
+						{
+							height: 65,
+							color: "#2f7ed8",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			 },
+			{
+				width: 20,
+				label: "Seg3",
+				slices :
+				[
+						{
+							height: 400,
+							color: "#667292",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 50,
+							color: "#20D635",
+							highlight: "#23FA3C",
+							label: "3"
+						},
+						{
+							height: 180,
+							color: "#622569",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 30,
+				label: "Seg4",
+				slices :
+				[
+						{
+							height: 200,
+							color: "#7e685a",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 100,
+							color: "#c83349",
+							highlight: "#23FA3C",
+							label: "2"
+						},
+						{
+							height: 87,
+							color: "#8bbc21",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 70,
+				label: "Seg5",
+				slices :
+				[
+						{
+							height: 300,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 80,
+							color: "#b5e7a0",
+							highlight: "#23FA3C",
+							label: "2"
+						},
+						{
+							height: 135,
+							color: "#e06377",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			}
+		]
+		};
+		var spieData84 = {
+			labels : ["Seg1", "Seg2", "Seg3","Seg4","Seg5","Seg6","Seg7","Seg8",],
+			datasets :[
+				{
+				width: 45,
+				label: "Seg1",
+				color: "#a6c96a",
+				slices :
+					[
+						{
+							height: 126,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "4"
+						},
+						{
+							height: 225,
+							color: "#a6c96a",
+							highlight: "#FF5A5E",
+							label: "3"
+						},
+						{
+							height: 97,
+							color: "#f28f43",
+							highlight: "#ED0C11",
+							label: "2"
+						},
+						{
+							height: 26,
+							color: "#77a1e5",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			 	},
+				{
+				width: 35,
+				label: "Seg2",
+				slices :
+					[
+						{
+							height: 78,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "4"
+						},
+						{
+							height: 100,
+							color: "#F7464A",
+							highlight: "#FF5A5E",
+							label: "3"
+						},
+						{
+							height: 100,
+							color: "#CC1015",
+							highlight: "#ED0C11",
+							label: "2"
+						},
+						{
+							height: 65,
+							color: "#2f7ed8",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			 },
+			{
+				width: 20,
+				label: "Seg3",
+				slices :
+				[
+						{
+							height: 300,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "4"
+						},
+						{
+							height: 400,
+							color: "#667292",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 50,
+							color: "#20D635",
+							highlight: "#23FA3C",
+							label: "3"
+						},
+						{
+							height: 180,
+							color: "#622569",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 30,
+				label: "Seg4",
+				slices :
+				[
+						{
+							height: 35,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "4"
+						},
+						{
+							height: 200,
+							color: "#7e685a",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 100,
+							color: "#c83349",
+							highlight: "#23FA3C",
+							label: "2"
+						},
+						{
+							height: 87,
+							color: "#8bbc21",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 70,
+				label: "Seg5",
+				slices :
+				[
+						{
+							height: 45,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "4"
+						},
+						{
+							height: 300,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "3"
+						},
+						{
+							height: 80,
+							color: "#b5e7a0",
+							highlight: "#23FA3C",
+							label: "2"
+						},
+						{
+							height: 135,
+							color: "#e06377",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 70,
+				label: "Seg6",
+				slices :
+				[
+						{
+							height: 300,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "4"
+						},
+						{
+							height: 80,
+							color: "#b5e7a0",
+							highlight: "#23FA3C",
+							label: "3"
+						},
+						{
+							height: 135,
+							color: "#e06377",
+							highlight: "#ED0C11",
+							label: "2"
+						},
+						{
+							height: 165,
+							color: "#ED0C11",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 36,
+				label: "Seg7",
+				slices :
+				[
+						{
+							height: 235,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "4"
+						},
+						{
+							height: 45,
+							color: "#b5e7a0",
+							highlight: "#23FA3C",
+							label: "3"
+						},
+						{
+							height: 130,
+							color: "#e06377",
+							highlight: "#ED0C11",
+							label: "2"
+						},
+						{
+							height: 45,
+							color: "#ED0C11",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			},
+			{
+				width: 200,
+				label: "Seg8",
+				slices :
+				[
+						{
+							height: 50,
+							color: "#80ced6",
+							highlight: "#55FA68",
+							label: "4"
+						},
+						{
+							height: 80,
+							color: "#b5e7a0",
+							highlight: "#23FA3C",
+							label: "3"
+						},
+						{
+							height: 145,
+							color: "#e06377",
+							highlight: "#ED0C11",
+							label: "2"
+						},
+						{
+							height: 325,
+							color: "#ED0C11",
+							highlight: "#ED0C11",
+							label: "1"
+						}
+					]
+			}
+		]
+		};
+
+
+			window.onload = function() {
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.mySpie = new Chart(ctx,{
+          type: 'Spie',
+          data: spieData53,
+          options: {
+              responsive:true,
+							tooltips: {
+								titleFontColor: '#0066ff'
+							},
+			        title: {
+			                  display: true,
+			                  text: 'Super Cool Pie',
+			                  position: 'bottom'
+			         }
+			        // scales: {
+			        //     yAxes: [{
+			        //         ticks: {
+			        //             beginAtZero:true
+			        //         }
+			        //     }]
+			        // }
+
+						// plugins: {
+						// 		 TooltipsPlugin : true
+					 	// }
+        	}
+				}
+			);
+
+		};
+
+
+	</script>
+	</body>
+</html>

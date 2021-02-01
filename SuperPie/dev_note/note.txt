@@ -1,0 +1,10 @@
+problem1 :
+1. canvas are not set correctly. hight and width are not populate to ctx.
+2. seg calculation is not right for last seg
+
+
+Changes:
+1. the dataset populate is by one call in the old system, new : each dataset Will trigger
+2. the envent process is different. no need to register event type, yes ,you can but new chart can do it in plug in
+3. object changed
+4. 

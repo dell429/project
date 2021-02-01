@@ -1,0 +1,116 @@
+
+/* Thermometer chart image Reference link - https://www.rgraph.net/canvas/thermometer.html */
+/* Back to Back horizontal bar chart image reference link - https://bookdown.org/lyzhang10/lzhang_r_tips_book/how-to-plot-data.html*/
+/* Super pie chart image link - http://www.intellspot.com/data-visualization-types/ */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>First page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style type="text/css">
+  body{
+    background: white;
+    background: url(3.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+  .bg-img{
+    transform: translate(0%, 17%);
+  }
+  .thermometer-pics{
+    display: block;
+    width: 20%;
+    margin: auto;
+  }
+  div#buttonstyle {
+  /*  display: flex;*/
+    width: 100%;
+    margin: auto;
+    position: relative;
+  }
+  button.chart-btn {
+    background: white;
+    border: 2px solid black;
+    color: black;
+    border-radius: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .button-div.d-block {
+    width: 33.33%;
+    float: left;
+  }
+  
+.horizontal-chart-pics{
+  width: 76%;
+  margin: auto;
+  display: block;
+}
+.pie-pics{
+  width: 55%;
+  margin: auto;
+  display: block;
+}
+h2.chart-sheading {
+    color: black;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 33px;
+}
+h2.chart-heading {
+    color: white;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 33px;
+}
+.img-and-btn{
+  cursor: pointer;
+}
+</style>
+<body>
+<section class="bg-img">
+  <div class="container">
+    <br>
+    <h2 class="chart-heading">Please select the chart type</h2>
+    <br>
+    <div id="buttonstyle">
+
+      <div class="button-div d-block">
+        <p class="img-and-btn" onclick="window.location='basic.html'">
+          <img class="thermometer-pics" src="4.jpeg">
+          <button onclick="window.location='basic.html'" type="button" class="btn btn-primary chart-btn">Linear Thermometer</button>
+        </p>
+      </div>
+
+      <div class="button-div d-block">
+        <p class="img-and-btn">
+          <img class="horizontal-chart-pics" src="backtobackhorizontal.jpeg">
+          <button  onclick="window.location.href='../../B2BHbar/test/btbhbar.html'"   type="button" class="btn btn-primary chart-btn">Back to Back Horizontal Chart</button>
+        </p>
+      </div>
+
+      <div class="button-div d-block">
+        <p class="img-and-btn">
+          <img class="pie-pics" src="2.jpeg">
+          <button onclick="window.location.href='../../SuperPie/test/spie.html'" type="button" class="btn btn-primary chart-btn">Super Pie Chart</button>
+        </p>
+      </div>
+    <!-- <button onclick="window.location='basic.html'" type="button" class="btn btn-primary">Linear Thermometer</button>
+    <br> <br>
+    <button type="button" class="btn btn-primary">Back to Back Horizontal Chart</button>
+    <br> <br>
+    <button type="button" class="btn btn-primary">Super Pie chart</button>
+  </div> -->
+  </div>
+</section>
+</body>
+</html>

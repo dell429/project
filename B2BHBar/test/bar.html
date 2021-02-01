@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Back to Back Horizontal Bar</title>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.js"></script>
+		<style>
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#canvas-holder{
+				width:40%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="canvas-holder">
+		  	<canvas id="chart-area" width="800" height="800"/>
+		</div>
+    <script>
+	  	window.onload = function() {
+			  var ctx = document.getElementById("chart-area").getContext("2d");
+			    window.mythemo = new Chart(ctx, {
+			  	type: 'bar',
+			  	data: {
+            <!-- labels: ["CAT1","CAT2","CAT3","CAT4","CAT5","CAT6"],-->
+            labels: ["CAT1","CAT2"],
+						datasets: [
+            {
+              label:"dataset-1",
+							backgroundColor: "blue",
+							data: [20,35]
+					  },
+            {
+              label:"dataset-2",
+              backgroundColor: "red",
+              data: [20,17]
+            }]
+				}
+			})
+		};
+	</script>
+	</body>
+</html>

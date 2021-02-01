@@ -1,0 +1,50 @@
+
+body {
+  background-color: #32679A;
+  padding: 0;
+  margin: 0;
+  overflow: hidden !important;
+
+}
+.row{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+h2 {
+  color: green;
+  text-align: center;
+}
+
+#buttonstyle{
+  text-align: center;
+}
+#combo{
+  width: inherit;
+}
+#canvas-holder {
+    width: 40%;
+    float: left;
+}
+.cl{
+  padding-top: 15px;
+    padding-bottom: 15px;
+}
+#backtomenu {
+  /* float:right; */
+
+}
+.card-header{
+  background-color: #ffffff;
+  display: flex;
+  border-bottom: 1px solid #000;
+  padding-bottom: 15px;
+  padding-top: 15px;
+
+}
+
+.body{
+  margin-top: 10px;
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+horizontal Bar Version 1.0
+
+Configuration:
+BTBhorizontalBar = {
+    //could be multiple labels
+    labels: ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5", "Category 6", "Category 7"],
+    // must be 2 dataset, (if only one set is provided, do we present with 1 bar??)
+    // negative value is not supported
+    datasets: [
+    {
+        backgroundColor: "#00b0f0",
+        data: [80,10,15,5,20,3,25]
+    }
+    {
+        backgroundColor: "#00b0f0",
+        data: [50,10,20,100,40,35,120]
+    }
+    ]
+
+};
+
+
+
+problem 1: X scale and Y scale calculation is differnent
+
+
+scacle changed when disable 2 and enable again? bug
+scale calculate has problem when browser change size. need refresh? bug
+
